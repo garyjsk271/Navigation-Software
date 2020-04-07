@@ -2,8 +2,8 @@
 #include <vector>
 
 #include "gtest/gtest.h"
-#include "../BruinNavStaticLib/Provided.h"
-#include "../BruinNavStaticLib/Support.h"
+#include "../BruinNav/Provided.h"
+#include "../BruinNav/Support.h"
 
 // static objects which will be loaded with real data.
 static MapLoader        static_MapLoader;
