@@ -11,6 +11,7 @@ bool MapLoaderImpl::load(std::string mapFile)
 {
     std::ifstream filestream;
     filestream.open(mapFile);
+
     if (filestream.fail())
     {
         filestream.close();
@@ -27,7 +28,7 @@ bool MapLoaderImpl::load(std::string mapFile)
         std::getline(filestream, geoCoordInfo);
         std::getline(filestream, nAttractionsAsString);
 
-        if (locationName == "" or geoCoordInfo == "" or nAttractionsAsString == "")
+        if (empty(locationName) or empty(geoCoordInfo) or empty(nAttractionsAsString) )
         {
             break;
         }
@@ -55,6 +56,9 @@ bool MapLoaderImpl::load(std::string mapFile)
     }
 
     nStreets_ = size(allStreets_);
+
+    filestream.close();
+    
     return true;
 }
 

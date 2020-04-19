@@ -13,28 +13,24 @@ public:
 public:
     MyMap() = default;
 
+    // Level-Order deletion of nodes.
+    // Not done recursively to avoid potential stack overflows.
     ~MyMap() { 
-        clear(); 
-    }
-
-    // level-order deletion of all nodes.
-    void clear()
-    {
         auto toBeDeleted = std::queue<node *>{};
         toBeDeleted.push(root_);
         while (!empty(toBeDeleted))
         {
             auto current = toBeDeleted.front();
+            toBeDeleted.pop();
             if (current != nullptr)
             {
                 toBeDeleted.push(current->left);
                 toBeDeleted.push(current->right);
             }
             delete current;
-            toBeDeleted.pop();
         }
         root_ = nullptr;
-        nNodes_ = 0;
+        nNodes_ = 0; 
     }
 
     inline int size() const

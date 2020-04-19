@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "functional": "cpp",
+        "memory": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "xmemory": "cpp",
+        "xstddef": "cpp",
+        "xstring": "cpp"
+    }
+}

@@ -221,6 +221,7 @@ void NavigatorImpl::getNavSegments(std::stack<StreetSegment> &fullPath,
 
     auto currStreet     = fullPath.top();
     fullPath.pop();
+
     auto prevNavSeg      = result.back();  
     auto travelDirection = getTravelDirection(currStreet.segment);
 
@@ -236,6 +237,7 @@ void NavigatorImpl::getNavSegments(std::stack<StreetSegment> &fullPath,
 
     nextNavSeg.initProceed(travelDirection, currStreet.streetName, 
         distanceTraveled,currStreet.segment);
+    
     result.emplace_back(nextNavSeg);
     
     getNavSegments(fullPath, result, scoreMap, currStreet.streetName);
