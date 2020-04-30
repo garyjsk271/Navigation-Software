@@ -53,7 +53,7 @@ void extractAttraction(const std::string &attractionInfo, Address &attraction)
 std::string getTravelDirection(const GeoSegment &gs)
 {
     auto travelAngle = angleOfLine(gs);
-    // turnDirection = travelAngle < 180 ? 'L' : 'R'; 
+
     auto direction =
         travelAngle <= 22.5  ? "east"      :
         travelAngle <= 67.5  ? "northeast" :
